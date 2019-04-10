@@ -57,7 +57,7 @@ void encoder(){
         position = (position + 1) % size;
     }
 
-    datas = fopen("./new.gif", "wb");
+    datas = fopen("./modified.gif", "wb");
     fwrite(&(data[0]), 1, size, datas);
     fclose(datas);
 
@@ -66,7 +66,7 @@ void encoder(){
 
 void decoder(){
     FILE* originDatas = fopen("./origin.gif", "rb");
-    FILE* newDatas = fopen("./new.gif", "rb");
+    FILE* newDatas = fopen("./modified.gif", "rb");
     char oldData, newData;
     unsigned int size, counter;
     unsigned char hasMessage = 0;
