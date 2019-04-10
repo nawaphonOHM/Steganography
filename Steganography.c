@@ -28,7 +28,7 @@ int main(){
 }
 
 void encoder(){
-    FILE* datas = fopen("./testFile.jpg", "rb");
+    FILE* datas = fopen("./origin.gif", "rb");
     unsigned int size, counter;
     unsigned int textSize;
     unsigned int position;
@@ -57,7 +57,7 @@ void encoder(){
         position = (position + 1) % size;
     }
 
-    datas = fopen("./testFile(new).jpg", "wb");
+    datas = fopen("./new.gif", "wb");
     fwrite(&(data[0]), 1, size, datas);
     fclose(datas);
 
@@ -65,8 +65,8 @@ void encoder(){
 }
 
 void decoder(){
-    FILE* originDatas = fopen("./testFile.jpg", "rb");
-    FILE* newDatas = fopen("./testFile(new).jpg", "rb");
+    FILE* originDatas = fopen("./orgin.gif", "rb");
+    FILE* newDatas = fopen("./new.gif", "rb");
     char oldData, newData;
     unsigned int size, counter;
     unsigned char hasMessage = 0;
