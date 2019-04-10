@@ -50,7 +50,9 @@ void encoder(){
     scanf("%[0-9a-zA-z ]s", &(text[0]));
 
     srand(time(NULL));
-    position = rand() % size;
+    do{
+        position = rand() % size;
+    } while(size + 1 < textSize + position);  //size - position < textSize - 1
 
     for(counter = 0; counter < textSize && counter < size; counter++){
         data[position] = text[counter];
