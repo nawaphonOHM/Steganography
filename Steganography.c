@@ -52,7 +52,7 @@ void encoder(){
     srand(time(NULL));
     do{
         position = rand() % size;
-    } while(size + 1 < textSize + position && textSize < size);  //size - position < textSize - 1
+    } while(size < textSize + position && textSize < size);  //size - position < textSize
 
     for(counter = 0; counter < textSize && counter < size; counter++){
         data[position] = text[counter];
