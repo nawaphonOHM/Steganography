@@ -47,14 +47,14 @@ void encoder(){
     char text[textSize + 1];
     
     printf("Please give your favor message: ");
-    scanf("%[0-9a-zA-z ]s", &(text[0]));
+    scanf("%[0-9a-zA-Z ]s", &(text[0]));
 
     srand(time(NULL));
     do{
         position = rand() % size;
-    } while(size + 1 < textSize + position);  //size - position < textSize - 1
+    } while(size + 1 < textSize + position && position <= size);  //size - position < textSize - 1
 
-    for(counter = 0; counter < textSize && counter < size; counter++){
+    for(counter = 0; counter < textSize && position <= size; counter++){
         data[position] = text[counter];
         position = position + 1;
     }
