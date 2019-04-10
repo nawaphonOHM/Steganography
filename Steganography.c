@@ -65,7 +65,7 @@ void encoder(){
 }
 
 void decoder(){
-    FILE* originDatas = fopen("./orgin.gif", "rb");
+    FILE* originDatas = fopen("./origin.gif", "rb");
     FILE* newDatas = fopen("./new.gif", "rb");
     char oldData, newData;
     unsigned int size, counter;
@@ -74,6 +74,7 @@ void decoder(){
     fseek(originDatas, 0, SEEK_END);
     size = ftell(originDatas);
     rewind(originDatas);
+
 
     for(counter = 0; counter < size; counter++){
         fread(&oldData, 1, 1, originDatas);
