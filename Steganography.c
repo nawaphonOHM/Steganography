@@ -54,7 +54,7 @@ void encoder(){
 
     for(counter = 0; counter < textSize && counter < size; counter++){
         data[position] = text[counter];
-        position = (position + 1) % size;
+        position = position + 1;
     }
 
     datas = fopen("./modified.gif", "wb");
