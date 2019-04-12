@@ -91,6 +91,9 @@ void decoder(){
 
     if(!hasMessage) printf("There is no a message.");
 
+    fclose(originDatas);
+    fclose(newDatas);
+
     printf("\n");
 
     return;
